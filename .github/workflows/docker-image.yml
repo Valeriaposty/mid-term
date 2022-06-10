@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file ~/review/mid-term/docker/Dockerfile --tag postiglione/jupyter/minimal-notebook
+      run: docker build --file ~/review/mid-term/docker/Dockerfile --tag postiglione/jupyter/minimal-notebook
     - name: Push the image to DockerHub
       run : docker login -u postiglione -p ${{ secrets.TOKEN_MIDTERM }} && docker push postiglione/jupyter/minimal-notebook
     
